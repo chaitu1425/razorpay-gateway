@@ -12,9 +12,11 @@ const Payment = () => {
         console.log("amount",amount)
         const {data:key} = await axios.get("/api/v1/payment/process/getkey");
         const {keyOrder}= key
+
+
         const {data:OrderData} =await axios.post("/api/v1/payment/process",{amount});
         const {order} = OrderData;
-
+        console.log(order)
 
         const options = {
         key: keyOrder, 
